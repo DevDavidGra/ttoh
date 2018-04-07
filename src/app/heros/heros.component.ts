@@ -1,11 +1,11 @@
 import {Component, OnInit} from '@angular/core';
-import {Hero} from "../hero";
-import {HEROS} from "../HEROS";
+import {Hero} from '../hero';
+import {HEROS} from '../HEROS';
 
 @Component({
   selector: 'app-heros',
   templateUrl: './heros.component.html',
-  styleUrls: ['./heros.component.css']
+  styleUrls: ['./heros.component.scss']
 })
 export class HerosComponent implements OnInit {
   /*hero: Hero = {
@@ -15,6 +15,7 @@ export class HerosComponent implements OnInit {
   };*/
   // hero = new Hero();
   heros = HEROS;
+  selectedHero: Hero;
 
   constructor() {
     // this.hero.id = 1;
@@ -22,6 +23,11 @@ export class HerosComponent implements OnInit {
   }
 
   ngOnInit() {
+
+  }
+  onSelect(hero: Hero) {
+    console.log(hero);
+    this.selectedHero = hero;
   }
 
 }
